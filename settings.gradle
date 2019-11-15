@@ -1,3 +1,4 @@
 rootProject.name = 'bitcoin-sample'
 include ':app'
 include ':base:domain'
+include ':base:data'
