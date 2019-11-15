@@ -10,14 +10,23 @@ buildscript {
 
     // Dependency versions
     ext.versions = [
-        agp   : "3.5.2",
-        kotlin: "1.3.50",
-        detekt: "1.0.1"
+        agp      : "3.5.2",
+        kotlin   : "1.3.50",
+        detekt   : "1.0.1",
+        rxJava   : "2.2.14",
+        rxKotlin : "2.4.0",
+        rxAndroid: "2.1.1"
     ]
 
     // Dependencies
     ext.deps = [
         kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+
+        rx     : [
+            java   : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
+            kotlin : "io.reactivex.rxjava2:rxkotlin:${versions.rxKotlin}",
+            android: "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
+        ],
 
         detekt : [
             formatting: "io.gitlab.arturbosch.detekt:detekt-formatting:${versions.detekt}"

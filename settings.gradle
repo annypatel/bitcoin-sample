@@ -1,2 +1,3 @@
-rootProject.name='bitcoin-sample'
+rootProject.name = 'bitcoin-sample'
 include ':app'
+include ':base:domain'
