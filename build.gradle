@@ -19,7 +19,8 @@ buildscript {
         dagger   : "2.25.2",
         retrofit : "2.6.1",
         okhttp   : "4.2.2",
-        junit    : "4.12"
+        junit    : "4.12",
+        mockito  : "2.2.0"
     ]
 
     // Dependencies
@@ -55,7 +56,8 @@ buildscript {
         ],
 
         test    : [
-            junit: "junit:junit:$versions.junit"
+            junit  : "junit:junit:$versions.junit",
+            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockito",
         ],
 
         plugins : [
