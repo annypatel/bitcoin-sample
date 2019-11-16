@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation project(":base:data")
+    implementation project(":base:domain")
+    implementation project(":charts:domain")
+    implementation deps.kotlin
+    implementation deps.rx.java
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+    implementation deps.retrofit.client
+    implementation deps.gson
+
+    testImplementation project(":test:domain")
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockito
+}

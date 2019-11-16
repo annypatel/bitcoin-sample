@@ -19,6 +19,7 @@ buildscript {
         dagger   : "2.25.2",
         retrofit : "2.6.1",
         okhttp   : "4.2.2",
+        gson     : "2.8.6",
         junit    : "4.12",
         mockito  : "2.2.0"
     ]
@@ -50,6 +51,8 @@ buildscript {
             client : "com.squareup.okhttp3:okhttp:$versions.okhttp",
             logging: "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
         ],
+
+        gson    : "com.google.code.gson:gson:$versions.gson",
 
         detekt  : [
             formatting: "io.gitlab.arturbosch.detekt:detekt-formatting:${versions.detekt}"
