@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation deps.kotlin
+    implementation deps.rx.java
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+    implementation deps.androidx.viewModel
+    implementation deps.androidx.liveData
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockito
+    testImplementation deps.test.lifecycle
+    testImplementation deps.androidx.lifecycle
+}

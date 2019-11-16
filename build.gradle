@@ -20,6 +20,7 @@ buildscript {
         retrofit : "2.6.1",
         okhttp   : "4.2.2",
         gson     : "2.8.6",
+        arch     : "2.1.0",
         junit    : "4.12",
         mockito  : "2.2.0"
     ]
@@ -29,9 +30,9 @@ buildscript {
         kotlin  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
 
         rx      : [
-            java   : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
-            kotlin : "io.reactivex.rxjava2:rxkotlin:${versions.rxKotlin}",
-            android: "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
+            java   : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+            kotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+            android: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"
         ],
 
         dagger  : [
@@ -54,13 +55,20 @@ buildscript {
 
         gson    : "com.google.code.gson:gson:$versions.gson",
 
+        androidx: [
+            viewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.arch",
+            liveData : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.arch",
+            lifecycle: "androidx.lifecycle:lifecycle-runtime:$versions.arch"
+        ],
+
         detekt  : [
-            formatting: "io.gitlab.arturbosch.detekt:detekt-formatting:${versions.detekt}"
+            formatting: "io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt"
         ],
 
         test    : [
-            junit  : "junit:junit:$versions.junit",
-            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockito",
+            junit    : "junit:junit:$versions.junit",
+            mockito  : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockito",
+            lifecycle: "androidx.arch.core:core-testing:$versions.arch",
         ],
 
         plugins : [
