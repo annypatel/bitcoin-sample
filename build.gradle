@@ -10,19 +10,22 @@ buildscript {
 
     // Dependency versions
     ext.versions = [
-        agp      : "3.5.2",
-        kotlin   : "1.3.50",
-        detekt   : "1.0.1",
-        rxJava   : "2.2.14",
-        rxKotlin : "2.4.0",
-        rxAndroid: "2.1.1",
-        dagger   : "2.25.2",
-        retrofit : "2.6.1",
-        okhttp   : "4.2.2",
-        gson     : "2.8.6",
-        arch     : "2.1.0",
-        junit    : "4.12",
-        mockito  : "2.2.0"
+        agp       : "3.5.2",
+        kotlin    : "1.3.50",
+        detekt    : "1.0.1",
+        rxJava    : "2.2.14",
+        rxKotlin  : "2.4.0",
+        rxAndroid : "2.1.1",
+        dagger    : "2.25.2",
+        retrofit  : "2.6.1",
+        okhttp    : "4.2.2",
+        gson      : "2.8.6",
+        arch      : "2.1.0",
+        appCompat : "1.1.0",
+        fragment  : "1.1.0",
+        navigation: "2.1.0",
+        junit     : "4.12",
+        mockito   : "2.2.0"
     ]
 
     // Dependencies
@@ -56,9 +59,12 @@ buildscript {
         gson    : "com.google.code.gson:gson:$versions.gson",
 
         androidx: [
-            viewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.arch",
-            liveData : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.arch",
-            lifecycle: "androidx.lifecycle:lifecycle-runtime:$versions.arch"
+            viewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.arch",
+            liveData  : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.arch",
+            lifecycle : "androidx.lifecycle:lifecycle-runtime:$versions.arch",
+            appCompat : "androidx.appcompat:appcompat:$versions.appCompat",
+            fragment  : "androidx.fragment:fragment-ktx:$versions.fragment",
+            navigation: "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
         ],
 
         detekt  : [
@@ -156,6 +162,10 @@ subprojects {
                 abortOnError = true
                 warningsAsErrors = true
                 htmlReport = false
+            }
+
+            packagingOptions {
+                exclude 'META-INF/*.kotlin_module'
             }
         }
     }
