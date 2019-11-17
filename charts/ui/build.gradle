@@ -1,0 +1,18 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation project(":base:ui")
+    implementation project(":base:domain")
+    implementation project(":charts:domain")
+    implementation deps.kotlin
+    implementation deps.rx.java
+    implementation deps.rx.kotlin
+    implementation deps.dagger.runtime
+    implementation deps.dagger.androidRuntime
+    kapt deps.dagger.compiler
+    kapt deps.dagger.androidCompiler
+    implementation deps.androidx.fragment
+    implementation deps.androidx.navigation
+}
