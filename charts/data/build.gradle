@@ -12,7 +12,7 @@ dependencies {
     kapt deps.dagger.compiler
     implementation deps.retrofit.client
     implementation deps.gson
-    implementation deps.threeten
+    implementation deps.threetenabp
 
     testImplementation project(":test:domain")
     testImplementation deps.test.junit

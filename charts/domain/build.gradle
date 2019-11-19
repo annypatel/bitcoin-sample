@@ -7,8 +7,10 @@ dependencies {
     implementation deps.rx.java
     implementation deps.dagger.runtime
     kapt deps.dagger.compiler
-    implementation deps.threeten
+    implementation deps.threetenabp
 
+    testImplementation project(":test:domain")
     testImplementation deps.test.junit
     testImplementation deps.test.mockito
+    testImplementation deps.threetenbp
 }

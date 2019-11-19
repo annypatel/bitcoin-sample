@@ -1,7 +1,13 @@
 package bitcoin.charts.domain.di
 
+import bitcoin.charts.domain.DurationToDate
+import bitcoin.charts.domain.DurationToDateImpl
+import bitcoin.charts.domain.GetDurationFromBaseline
+import bitcoin.charts.domain.GetDurationFromBaselineImpl
 import bitcoin.charts.domain.GetMarketPrice
 import bitcoin.charts.domain.GetMarketPriceImpl
+import bitcoin.charts.domain.ToDisplayablePrice
+import bitcoin.charts.domain.ToDisplayablePriceImpl
 import dagger.Binds
 import dagger.Module
 
@@ -13,4 +19,14 @@ abstract class ChartsDomainModule {
 
     @Binds
     abstract fun getMarketPrice(getMarketPrice: GetMarketPriceImpl): GetMarketPrice
+
+    @Binds
+    abstract fun getDurationFromBaseline(formatPrice: GetDurationFromBaselineImpl):
+        GetDurationFromBaseline
+
+    @Binds
+    abstract fun durationToDate(formatDate: DurationToDateImpl): DurationToDate
+
+    @Binds
+    abstract fun toDisplayablePrice(toDisplayablePrice: ToDisplayablePriceImpl): ToDisplayablePrice
 }
