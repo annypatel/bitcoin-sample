@@ -1,0 +1,8 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+dependencies {
+    compileOnly project(":base:ui")
+    compileOnly deps.kotlin
+    compileOnly deps.test.junit
+}

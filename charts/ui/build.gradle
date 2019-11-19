@@ -15,4 +15,11 @@ dependencies {
     kapt deps.dagger.androidCompiler
     implementation deps.androidx.fragment
     implementation deps.androidx.navigation
+    implementation deps.threetenabp
+
+    testImplementation project(":test:domain")
+    testImplementation project(":test:ui")
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockito
+    testImplementation deps.test.lifecycle
 }
