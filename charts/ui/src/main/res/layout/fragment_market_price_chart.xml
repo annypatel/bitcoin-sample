@@ -16,14 +16,32 @@
         android:layout_marginBottom="@dimen/spacing_16dp"
         android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/tvError"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/viewError"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:drawableTop="@drawable/ic_error"
-        android:drawablePadding="@dimen/spacing_16dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:visibility="gone" />
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/ic_error"
+            android:drawablePadding="@dimen/spacing_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        <Button
+            android:id="@+id/btnRetry"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/spacing_16dp"
+            android:text="@string/retry" />
+
+    </LinearLayout>
 
 </FrameLayout>

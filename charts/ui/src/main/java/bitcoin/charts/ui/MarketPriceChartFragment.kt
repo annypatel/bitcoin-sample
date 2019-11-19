@@ -40,6 +40,7 @@ class MarketPriceChartFragment : DaggerFragment() {
     private val viewModel: MarketPriceChartViewModel by viewModels { factory }
 
     private lateinit var progressBar: ProgressBar
+    private lateinit var viewError: View
     private lateinit var tvError: TextView
     private lateinit var chart: LineChart
 
@@ -58,7 +59,12 @@ class MarketPriceChartFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         progressBar = view.findViewById(R.id.progressBar)
+        viewError = view.findViewById(R.id.viewError)
         tvError = view.findViewById(R.id.tvError)
+
+        // setup retry
+        view.findViewById<View>(R.id.btnRetry)
+            .setOnClickListener { getMarketPrice() }
 
         // configure line chart
         chart = view.findViewById<LineChart>(R.id.marketPriceChart)
@@ -74,12 +80,14 @@ class MarketPriceChartFragment : DaggerFragment() {
 
         // observe and get the bitcoin market price
         viewModel.prices.observe(this, ::showLoading, ::showPriceOnChart, ::showError)
-        savedInstanceState ?: viewModel.getMarketPrice(TIMESPAN, ROLLING_AVG, ROLLING_AVG_UNIT)
+        savedInstanceState ?: getMarketPrice()
     }
+
+    private fun getMarketPrice() = viewModel.getMarketPrice(TIMESPAN, ROLLING_AVG, ROLLING_AVG_UNIT)
 
     private fun showLoading() {
         progressBar.visibility = View.VISIBLE
-        tvError.visibility = View.GONE
+        viewError.visibility = View.GONE
         chart.visibility = View.GONE
     }
 
@@ -119,7 +127,7 @@ class MarketPriceChartFragment : DaggerFragment() {
 
     private fun showError(@StringRes resId: Int) {
         progressBar.visibility = View.GONE
-        tvError.visibility = View.VISIBLE
+        viewError.visibility = View.VISIBLE
         tvError.setText(resId)
     }
 }
