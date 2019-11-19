@@ -33,6 +33,7 @@ dependencies {
     kapt deps.dagger.androidCompiler
     implementation deps.androidx.appCompat
     implementation deps.androidx.navigation
+    implementation deps.threetenabp
 
     // required only for dagger generated code
     implementation deps.retrofit.client

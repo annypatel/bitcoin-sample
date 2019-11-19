@@ -9,6 +9,7 @@ dependencies {
     kapt deps.dagger.compiler
     implementation deps.androidx.viewModel
     implementation deps.androidx.liveData
+    implementation deps.material
 
     testImplementation deps.test.junit
     testImplementation deps.test.mockito

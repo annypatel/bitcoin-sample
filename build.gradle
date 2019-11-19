@@ -24,8 +24,10 @@ buildscript {
         appCompat  : "1.1.0",
         fragment   : "1.1.0",
         navigation : "2.1.0",
+        material   : '1.0.0',
         threetenabp: "1.2.1",
         threetenbp : "1.4.0",
+        mpChart    : "v3.1.0",
         junit      : "4.12",
         mockito    : "2.2.0"
     ]
@@ -69,8 +71,10 @@ buildscript {
             navigation: "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
         ],
 
+        material   : "com.google.android.material:material:$versions.material",
         threetenabp: "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp",
         threetenbp : "org.threeten:threetenbp:$versions.threetenbp",
+        mpChart    : "com.github.PhilJay:MPAndroidChart:$versions.mpChart",
 
         detekt     : [
             formatting: "io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt"
@@ -107,6 +111,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 

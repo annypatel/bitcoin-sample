@@ -15,7 +15,9 @@ dependencies {
     kapt deps.dagger.androidCompiler
     implementation deps.androidx.fragment
     implementation deps.androidx.navigation
+    implementation deps.material
     implementation deps.threetenabp
+    implementation deps.mpChart
 
     testImplementation project(":test:domain")
     testImplementation project(":test:ui")
