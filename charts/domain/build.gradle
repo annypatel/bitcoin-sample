@@ -7,6 +7,7 @@ dependencies {
     implementation deps.rx.java
     implementation deps.dagger.runtime
     kapt deps.dagger.compiler
+    implementation deps.threeten
 
     testImplementation deps.test.junit
     testImplementation deps.test.mockito

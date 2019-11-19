@@ -3,8 +3,10 @@ package bitcoin.charts.data
 import bitcoin.base.domain.RxSchedulers
 import bitcoin.charts.data.network.BitcoinService
 import bitcoin.charts.domain.BitcoinRepository
+import bitcoin.charts.domain.Interval
 import bitcoin.charts.domain.Price
 import io.reactivex.Single
+import org.threeten.bp.Instant.ofEpochSecond
 import javax.inject.Inject
 
 /**
@@ -15,17 +17,17 @@ class BitcoinRepositoryImpl @Inject constructor(
     private val schedulers: RxSchedulers
 ) : BitcoinRepository {
 
-    override fun getMarketPrice(): Single<List<Price>> {
+    override fun getMarketPrice(timespan: Interval, rollingAvg: Interval): Single<List<Price>> {
         return bitcoinService.getMarketPrice(
-            timespan = "1year",
-            rollingAverage = "1days",
+            timespan = timespan.value,
+            rollingAvg = rollingAvg.value,
             format = "json"
         )
             .subscribeOn(schedulers.io)
             .map { response ->
                 response.prices.map {
                     Price(
-                        timestamp = it.timestamp,
+                        timestamp = ofEpochSecond(it.timestamp),
                         price = it.price
                     )
                 }

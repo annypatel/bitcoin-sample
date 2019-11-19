@@ -7,5 +7,5 @@ import io.reactivex.Single
  */
 interface BitcoinRepository {
 
-    fun getMarketPrice(): Single<List<Price>>
+    fun getMarketPrice(timespan: Interval, rollingAvg: Interval): Single<List<Price>>
 }

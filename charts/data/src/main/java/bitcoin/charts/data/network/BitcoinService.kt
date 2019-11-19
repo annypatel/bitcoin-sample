@@ -12,7 +12,7 @@ interface BitcoinService {
     @GET("market-price")
     fun getMarketPrice(
         @Query("timespan") timespan: String,
-        @Query("rollingAverage") rollingAverage: String,
+        @Query("rollingAverage") rollingAvg: String,
         @Query("format") format: String
     ): Single<MarketPriceResponse>
 }

@@ -14,5 +14,5 @@ class MarketPriceResponse(
  */
 data class RawPrice(
     @SerializedName("x") val timestamp: Long,
-    @SerializedName("y") val price: Double
+    @SerializedName("y") val price: Float
 )

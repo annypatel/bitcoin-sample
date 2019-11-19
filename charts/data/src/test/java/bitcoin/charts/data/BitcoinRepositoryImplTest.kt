@@ -3,6 +3,8 @@ package bitcoin.charts.data
 import bitcoin.charts.data.network.BitcoinService
 import bitcoin.charts.data.network.MarketPriceResponse
 import bitcoin.charts.data.network.RawPrice
+import bitcoin.charts.domain.Interval.Companion.days
+import bitcoin.charts.domain.Interval.Companion.years
 import bitcoin.charts.domain.Price
 import bitcoin.test.domain.testRxSchedulers
 import com.nhaarman.mockitokotlin2.any
@@ -10,6 +12,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.Single
 import org.junit.Test
+import org.threeten.bp.Instant.ofEpochSecond
 
 class BitcoinRepositoryImplTest {
 
@@ -22,9 +25,10 @@ class BitcoinRepositoryImplTest {
         givenSuccessfulGetMarketPriceCall(marketPriceResponse())
 
         // WHEN
-        val observer = bitcoinRepository.getMarketPrice()
+        val observer = bitcoinRepository.getMarketPrice(years(1), days(1))
             .test()
 
+        // THEN
         observer.assertValue(prices())
             .assertNoErrors()
     }
@@ -36,9 +40,10 @@ class BitcoinRepositoryImplTest {
         givenUnsuccessfulGetMarketPriceCall(error)
 
         // WHEN
-        val observer = bitcoinRepository.getMarketPrice()
+        val observer = bitcoinRepository.getMarketPrice(years(1), days(1))
             .test()
 
+        // THEN
         observer.assertError(error)
             .assertNoValues()
     }
@@ -57,23 +62,23 @@ class BitcoinRepositoryImplTest {
         listOf(
             RawPrice(
                 timestamp = 123,
-                price = 1.23
+                price = 1.23f
             ),
             RawPrice(
                 timestamp = 456,
-                price = 4.56
+                price = 4.56f
             )
         )
     )
 
     private fun prices() = listOf(
         Price(
-            timestamp = 123,
-            price = 1.23
+            timestamp = ofEpochSecond(123),
+            price = 1.23f
         ),
         Price(
-            timestamp = 456,
-            price = 4.56
+            timestamp = ofEpochSecond(456),
+            price = 4.56f
         )
     )
 }

@@ -1,9 +1,11 @@
 package bitcoin.charts.domain
 
+import org.threeten.bp.Instant
+
 /**
  * Data class for Bitcoin price with a timestamp.
  */
 data class Price(
-    val timestamp: Long,
-    val price: Double
+    val timestamp: Instant,
+    val price: Float
 )
