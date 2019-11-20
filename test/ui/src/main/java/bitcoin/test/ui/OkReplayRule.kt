@@ -4,6 +4,7 @@ import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.rule.GrantPermissionRule
+import bitcoin.base.ui.BaseApplication
 import okreplay.AndroidTapeRoot
 import okreplay.MatchRules
 import okreplay.OkReplayConfig
@@ -20,7 +21,7 @@ import org.junit.rules.TestRule
  * [RecorderRule] (records tapes) into [GrantPermissionRule] (grant write permission on device).
  */
 fun Any.okReplayRule(): TestRule {
-    val app = getApplicationContext() as? DaggerTestApplication
+    val app = getApplicationContext() as? BaseApplication
         ?: throw IllegalStateException("Your TestApp must extends DaggerTestApplication")
 
     val component = app.applicationInjector() as? OkReplayInterceptorProvider

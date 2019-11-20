@@ -6,10 +6,12 @@ dependencies {
     implementation deps.kotlin
     implementation deps.rx.java
     implementation deps.dagger.runtime
+    implementation deps.dagger.androidRuntime
     kapt deps.dagger.compiler
     implementation deps.androidx.viewModel
     implementation deps.androidx.liveData
     implementation deps.material
+    implementation deps.threetenabp
 
     testImplementation deps.test.junit
     testImplementation deps.test.mockito

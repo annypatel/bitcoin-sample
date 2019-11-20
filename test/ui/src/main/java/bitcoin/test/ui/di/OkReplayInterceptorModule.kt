@@ -9,7 +9,7 @@ import okreplay.OkReplayInterceptor
 import javax.inject.Singleton
 
 /**
- * Dagger module for [OkReplayInterceptor].
+ * Dagger module to inject [OkReplayInterceptor] into application component.
  */
 @Module
 abstract class OkReplayInterceptorModule {
@@ -24,8 +24,6 @@ abstract class OkReplayInterceptorModule {
         @Provides
         @Singleton
         @JvmStatic
-        fun okReplayInterceptor(): OkReplayInterceptor {
-            return OkReplayInterceptor()
-        }
+        fun okReplayInterceptor(): OkReplayInterceptor = OkReplayInterceptor()
     }
 }

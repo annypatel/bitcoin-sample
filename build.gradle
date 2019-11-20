@@ -20,7 +20,7 @@ buildscript {
         retrofit     : "2.6.1",
         okhttp       : "4.2.2",
         gson         : "2.8.6",
-        arch         : "2.1.0",
+        lifecycle    : "2.1.0",
         appCompat    : "1.1.0",
         fragment     : "1.1.0",
         navigation   : "2.1.0",
@@ -72,9 +72,9 @@ buildscript {
         gson       : "com.google.code.gson:gson:$versions.gson",
 
         androidx   : [
-            viewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.arch",
-            liveData  : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.arch",
-            lifecycle : "androidx.lifecycle:lifecycle-runtime:$versions.arch",
+            viewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle",
+            liveData  : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
+            lifecycle : "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle",
             appCompat : "androidx.appcompat:appcompat:$versions.appCompat",
             fragment  : "androidx.fragment:fragment-ktx:$versions.fragment",
             navigation: "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
@@ -93,7 +93,7 @@ buildscript {
             junit        : "junit:junit:$versions.junit",
             mockito      : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockito",
             mockitoInline: "org.mockito:mockito-inline:$versions.mockitoInline",
-            lifecycle    : "androidx.arch.core:core-testing:$versions.arch",
+            lifecycle    : "androidx.arch.core:core-testing:$versions.lifecycle",
             robolectric  : "org.robolectric:robolectric:$versions.robolectric",
             junitAndroid : "androidx.test.ext:junit:$versions.junitAndroid",
             espresso     : "androidx.test.espresso:espresso-core:$versions.espresso",
@@ -191,6 +191,7 @@ subprojects {
             lintOptions {
                 abortOnError = true
                 warningsAsErrors = true
+                xmlReport = true
                 htmlReport = false
             }
 
