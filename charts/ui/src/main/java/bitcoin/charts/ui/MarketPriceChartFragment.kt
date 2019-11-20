@@ -76,6 +76,7 @@ class MarketPriceChartFragment : DaggerFragment() {
                 xAxis.setDrawGridLines(false)
                 legend.isEnabled = false
                 description.isEnabled = false
+                marker = PriceMarkerView(requireContext(), viewModel)
             }
 
         // observe and get the bitcoin market price

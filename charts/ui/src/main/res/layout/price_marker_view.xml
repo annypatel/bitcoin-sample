@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvPrice"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_16dp"
+    android:background="@drawable/shape_marker_background"
+    android:padding="@dimen/spacing_8dp"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+    android:textSize="@dimen/chart_marker_text_size"
+    android:theme="@style/ThemeOverlay.MaterialComponents.Dark" />

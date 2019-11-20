@@ -5,4 +5,5 @@ dependencies {
     compileOnly project(":base:ui")
     compileOnly deps.kotlin
     compileOnly deps.test.junit
+    compileOnly deps.test.core
 }

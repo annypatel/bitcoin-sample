@@ -2,6 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+android {
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+}
+
 dependencies {
     implementation project(":base:ui")
     implementation project(":base:domain")
@@ -23,5 +29,9 @@ dependencies {
     testImplementation project(":test:ui")
     testImplementation deps.test.junit
     testImplementation deps.test.mockito
+    testImplementation deps.test.mockitoInline
     testImplementation deps.test.lifecycle
+    testImplementation deps.test.junitAndroid
+    testImplementation deps.test.robolectric
+    testImplementation deps.test.espresso
 }

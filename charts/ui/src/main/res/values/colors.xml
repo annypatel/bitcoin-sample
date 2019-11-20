@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="chart_line_color">@color/accent</color>
+    <color name="chart_marker_background">#303030</color>
 </resources>
