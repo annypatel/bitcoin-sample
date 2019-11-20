@@ -1,9 +1,19 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 dependencies {
     compileOnly project(":base:ui")
+    compileOnly project(":base:domain")
     compileOnly deps.kotlin
+    compileOnly deps.rx.java
+    compileOnly deps.rx.android
+    compileOnly deps.dagger.runtime
+    compileOnly deps.dagger.androidRuntime
+    compileOnly deps.okhttp.client
     compileOnly deps.test.junit
     compileOnly deps.test.core
+    compileOnly deps.test.rxidler
+    compileOnly deps.test.okReplay
+    kapt deps.dagger.compiler
 }

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'okreplay'
 
 android {
     testOptions {
@@ -15,6 +16,7 @@ dependencies {
     implementation deps.kotlin
     implementation deps.rx.java
     implementation deps.rx.kotlin
+    implementation deps.rx.android
     implementation deps.dagger.runtime
     implementation deps.dagger.androidRuntime
     kapt deps.dagger.compiler
@@ -34,4 +36,18 @@ dependencies {
     testImplementation deps.test.junitAndroid
     testImplementation deps.test.robolectric
     testImplementation deps.test.espresso
+
+    androidTestImplementation project(":test:ui")
+    androidTestImplementation project(":base:data")
+    androidTestImplementation project(":charts:data")
+    androidTestImplementation deps.test.runner
+    androidTestImplementation deps.test.core
+    androidTestImplementation deps.test.fragment
+    androidTestImplementation deps.test.espresso
+    androidTestImplementation deps.test.okReplay
+    androidTestImplementation deps.test.rxidler
+    kaptAndroidTest deps.dagger.compiler
+    kaptAndroidTest deps.dagger.androidCompiler
+    // required only for dagger generated code
+    androidTestImplementation deps.retrofit.client
 }

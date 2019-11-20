@@ -1,0 +1,10 @@
+!tape
+name: should show error view when no data found
+interactions:
+  - recorded: 2019-11-20T15:24:42.661Z
+    request:
+      method: GET
+      uri: https://api.blockchain.info/charts/market-price?timespan=1years&rollingAverage=1days&format=json
+    response:
+      status: 200
+      body: '{"status":"ok","name":"Market Price (USD)","unit":"USD","period":"day","description":"Average USD market price across major bitcoin exchanges.","values":[]}'

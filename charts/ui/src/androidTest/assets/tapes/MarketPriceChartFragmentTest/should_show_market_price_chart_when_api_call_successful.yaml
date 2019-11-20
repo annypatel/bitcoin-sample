@@ -1,0 +1,10 @@
+!tape
+name: should show market price chart when api call successful
+interactions:
+  - recorded: 2019-11-20T15:24:42.661Z
+    request:
+      method: GET
+      uri: https://api.blockchain.info/charts/market-price?timespan=1years&rollingAverage=1days&format=json
+    response:
+      status: 200
+      body: '{"status":"ok","name":"Market Price (USD)","unit":"USD","period":"day","description":"Average USD market price across major bitcoin exchanges.","values":[{"x":1542758400,"y":4533.680833333334},{"x":1542844800,"y":4548.7975},{"x":1542931200,"y":4309.337500000001},{"x":1543017600,"y":4293.840833333333},{"x":1543104000,"y":3823.5116666666668},{"x":1543190400,"y":3920.5366666666664},{"x":1543276800,"y":3751.6683333333344},{"x":1543363200,"y":4103.453846153846},{"x":1543449600,"y":4263.783333333334},{"x":1543536000,"y":4106.871666666667}]}'

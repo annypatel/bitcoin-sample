@@ -21,11 +21,11 @@ abstract class ChartsDomainModule {
     abstract fun getMarketPrice(getMarketPrice: GetMarketPriceImpl): GetMarketPrice
 
     @Binds
-    abstract fun getDurationFromBaseline(formatPrice: GetDurationFromBaselineImpl):
+    abstract fun getDurationFromBaseline(getDurationFromBaseline: GetDurationFromBaselineImpl):
         GetDurationFromBaseline
 
     @Binds
-    abstract fun durationToDate(formatDate: DurationToDateImpl): DurationToDate
+    abstract fun durationToDate(durationToDate: DurationToDateImpl): DurationToDate
 
     @Binds
     abstract fun toDisplayablePrice(toDisplayablePrice: ToDisplayablePriceImpl): ToDisplayablePrice
