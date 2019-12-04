@@ -11,7 +11,6 @@ class GetDurationFromBaselineImplTest {
     fun shouldFindBaselineAndCalculateDurationFromIt() {
         // GIVEN
         val prices = prices()
-        println(prices)
         val getDurationFromBaseline = GetDurationFromBaselineImpl(testRxSchedulers())
         val args = GetDurationFromBaseline.Args(prices, ChronoUnit.DAYS)
 
